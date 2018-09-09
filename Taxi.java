@@ -6,14 +6,10 @@
  * @author David J. Barnes 
  * @version 2010.12.03
  */
-public class Taxi
+public class Taxi extends Vehicle
 {
-    // A unique ID for this taxi.
-    private String id;
-    // The destination of this taxi.
-    private String destination;
-    // The location of this taxi.
-    private String location;
+    
+    
     // Whether it is free or not.
     private boolean free;
 
@@ -24,9 +20,8 @@ public class Taxi
      */
     public Taxi(String base, String id)
     {
-        this.id = id;
-        location = base;
-        destination = null;
+        super(id);
+        setLocation(base);
         free = true;
     }
     
@@ -47,44 +42,8 @@ public class Taxi
      */
     public String getStatus()
     {
-        return id + " at " + location + " headed for " +
-               destination;
-    }
-    
-    /**
-     * Return the ID of the taxi.
-     * @return The ID of the taxi.
-     */
-    public String getID()
-    {
-        return id;
-    }
-    
-    /**
-     * Return the location of the taxi.
-     * @return The location of the taxi.
-     */
-    public String getLocation()
-    {
-        return location;
-    }
-    
-    /**
-     * Return the destination of the taxi.
-     * @return The destination of the taxi.
-     */
-    public String getDestination()
-    {
-        return destination;
-    }
-    
-    /**
-     * Set the intented destination of the taxi.
-     * @param destination The intended destination.
-     */
-    public void setDestination(String destination)
-    {
-        this.destination = destination;
+        return getID() + " at " + getLocation() + " headed for " +
+               getDestination();
     }
     
     /**
@@ -93,8 +52,8 @@ public class Taxi
      */
     public void arrived()
     {
-        location = destination;
-        destination = null;
+        setLocation(getDestination());
+        setDestination(null);
         free = true;
     }
 }
