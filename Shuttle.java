@@ -27,17 +27,6 @@ public class Shuttle extends Vehicle
         super(id);
         setRoute(route);
     }
-    
-    /**
-     * Return the status of this shuttle.
-     * @return The status.
-     */
-    public String getStatus()
-    {
-        return getID() + " at " + getLocation() + " headed for " +
-               getDestination();
-    }
-    
     /**
      * Indicate that this shuttle has arrived at its next destination.
      */

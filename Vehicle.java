@@ -67,5 +67,15 @@ public class Vehicle
     {
         this.location = location;
     }
+    
+    /**
+     * Return the status of this vehicle.
+     * @return The status.
+     */
+    public String getStatus()
+    {
+        return this.id + " at " + this.location + " headed for " +
+               this.destination;
+    }
 
 }

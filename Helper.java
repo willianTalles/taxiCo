@@ -42,6 +42,7 @@ public class Helper
 		} else { 
 			System.out.println("Alguma coisa errada");
 		}
+		taxiCo1.showStatus();
 	}
 
 	/**

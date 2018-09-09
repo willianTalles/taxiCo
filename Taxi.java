@@ -35,16 +35,6 @@ public class Taxi extends Vehicle
         setDestination(destination);
         free = false;
     }
-
-    /**
-     * Return the status of this taxi.
-     * @return The status.
-     */
-    public String getStatus()
-    {
-        return getID() + " at " + getLocation() + " headed for " +
-               getDestination();
-    }
     
     /**
      * Indicate that this taxi has arrived at its destination.
